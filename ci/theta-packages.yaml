@@ -27,8 +27,6 @@ packages:
         paths:
             bzip2@1.0.6: /usr
         buildable: False
-    ch-placement:
-        version: [ develop ]
     cmake:
         modules:
             cmake@3.14.5: cmake/3.14.5
@@ -37,8 +35,6 @@ packages:
         paths:
             coreutils@8.25: /usr
         buildable: False
-    cppunit:
-        variants: cxxstd=14
     findutils:
         paths:
             findutils@4.5.12: /usr
@@ -65,8 +61,6 @@ packages:
         paths:
             m4@1.4.16: /usr
         buildable: False
-    mochi-margo:
-        version: [ develop ]
     mercury:
         variants: +udreg ~boostsys
     mpich:
@@ -81,8 +75,6 @@ packages:
         paths:
             pkg-config@0.29: /usr
         buildable: False
-    mochi-kv:
-        version: [ develop ]
     tar:
         paths:
             tar@1.27.1: /usr
@@ -91,11 +83,7 @@ packages:
         paths:
             texinfo@4.13: /usr
         buildable: False
-    mochi-thallium:
-        version: [ develop ]
     xz:
         paths:
             xz@5.0.5: /usr
         buildable: False
-    yaml-cpp:
-        version: [ develop ]

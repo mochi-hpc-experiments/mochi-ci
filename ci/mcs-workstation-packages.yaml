@@ -29,8 +29,6 @@ packages:
     paths:
       bzip2@1.0.6: /usr
     buildable: False
-  ch-placement:
-    version: [ develop ]
   cmake:
     paths:
       cmake@3.14.3: /soft/apps/packages/cmake-3.14.3
@@ -40,8 +38,6 @@ packages:
       coreutils@8.25 arch=linux-ubuntu16.04-x86_64: /usr
       coreutils@8.21 arch=linux-ubuntu14.04-x86_64: /usr
     buildable: False
-  cppunit:
-    variants: cxxstd=14
   findutils:
     paths:
       findutils@4.7.0 arch=linux-ubuntu16.04-x86_64: /usr
@@ -71,10 +67,8 @@ packages:
     paths:
       m4@1.4.17: /usr
     buildable: False
-  mochi-margo:
-    version: [ develop ]
   mercury:
-    variants: ~boostsys~verbose
+    variants: ~boostsys
   openssl:
     paths:
       openssl@1.0.2g arch=linux-ubuntu16.04-x86_64: /usr
@@ -90,8 +84,6 @@ packages:
       pkg-config@0.29.1 arch=linux-ubuntu16.04-x86_64: /usr
       pkg-config@0.26 arch=linux-ubuntu14.04-x86_64: /usr
     buildable: False
-  mochi-kv:
-    version: [ develop ]
   tar:
     paths:
       tar@1.28: /usr
@@ -101,14 +93,10 @@ packages:
       texinfo@6.1 arch=linux-ubuntu16.04-x86_64: /usr
       texinfo@5.2 arch=linux-ubuntu14.04-x86_64: /usr
     buildable: False
-  mochi-thallium:
-    version: [ develop ]
   xz:
     paths:
       xz@5.1.0: /usr
     buildable: False
-  yaml-cpp:
-    version: [ develop ]
   zlib:
     paths:
       zlib@1.2.8: /usr
