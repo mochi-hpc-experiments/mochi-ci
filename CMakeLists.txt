@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.6)
+project(mochi-all)
+include(GNUInstallDirs)
+message("This is a dummy placeholder for the Mochi spack packages")
+install(FILES README DESTINATION ${CMAKE_INSTALL_DOCDIR})
