@@ -9,30 +9,29 @@ STATUS=0
 
 function try_build {
   PACKAGE=$1
-  DEVELOP=$2
-  if [[ $DEVELOP = "develop" ]] ; then
+  VERSION=$2
+  LOGFILE=$3
+  DEVELOP=false
+  echo "Building $PACKAGE ($VERSION version)"
+  if [[ $VERSION = "develop" ]] ; then
     DEVELOP=true
-  elif [[ $DEVELOP = "release" ]] ; then
+  elif [[ $VERSION = "release" ]] ; then
     DEVELOP=false
   else
     echo "Verion should be either 'develop' or 'release'"
   fi
-  LOGFILE=$PACKAGE-$DEVELOP.log
-  echo "####################################" >> $LOGFILE
-  echo "Package $PACKAGE ($DEVELOP)"          >> $LOGFILE
-  echo "####################################" >> $LOGFILE
   RET=0
   if $DEVELOP ; then
-    spack install $PACKAGE@develop 2>&1 >> $LOGFILE
-    RET=$!
+    spack install $PACKAGE@develop
+    RET=$?
   else
-    spack install $PACKAGE 2>&1 >> $LOGFILE
-    RET=$!
+    spack install $PACKAGE
+    RET=$?
   fi
-  if [ $RET -eq 0 ]; then
-    echo "$PACKAGE ($DEVELOP) build => OK"
+  if [[ "$RET" = "0" ]]; then
+    echo "$PACKAGE ($VERSION) build => OK" >> $LOGFILE
   else
-    echo "$PACKAGE ($DEVELOP) build => FAILURE"
+    echo "$PACKAGE ($VERSION) build => FAILURE" >> $LOGFILE
     STATUS=1
   fi
 }
@@ -42,27 +41,29 @@ echo "Loading Spack"
 
 mkdir build-errors
 
+LOGFILE=build.txt
+
 echo "Building all Mochi components (${BUILD_TYPE})"
-try_build mochi-abt-io       $BUILD_TYPE
-try_build mochi-margo        $BUILD_TYPE
-try_build mochi-ch-placement $BUILD_TYPE
-try_build mochi-thallium     $BUILD_TYPE
-try_build mochi-ssg          $BUILD_TYPE
-try_build mochi-bake         $BUILD_TYPE
-try_build mochi-sdskv        $BUILD_TYPE
-try_build mochi-remi         $BUILD_TYPE
-try_build mochi-poesie       $BUILD_TYPE
-try_build mochi-mdcs         $BUILD_TYPE
-try_build mochi-sdsdkv       $BUILD_TYPE
-try_build mochi-abt-io       $BUILD_TYPE
+try_build mochi-abt-io       $BUILD_TYPE $LOGFILE
+try_build mochi-margo        $BUILD_TYPE $LOGFILE
+try_build mochi-ch-placement $BUILD_TYPE $LOGFILE
+try_build mochi-thallium     $BUILD_TYPE $LOGFILE
+try_build mochi-ssg          $BUILD_TYPE $LOGFILE
+try_build mochi-bake         $BUILD_TYPE $LOGFILE
+try_build mochi-sdskv        $BUILD_TYPE $LOGFILE
+try_build mochi-remi         $BUILD_TYPE $LOGFILE
+try_build mochi-poesie       $BUILD_TYPE $LOGFILE
+try_build mochi-mdcs         $BUILD_TYPE $LOGFILE
+try_build mochi-sdsdkv       $BUILD_TYPE $LOGFILE
+try_build mochi-abt-io       $BUILD_TYPE $LOGFILE
 
 if [ $ENABLE_PYTHON = "python" ]; then
-  try_build py-mochi-margo $BUILD_TYPE
-  try_build py-mochi-bake  $BUILD_TYPE
-  try_build py-mochi-ssg   $BUILD_TYPE
-  try_build py-mochi-remi  $BUILD_TYPE
-  try_build py-mochi-sdskv $BUILD_TYPE
-  try_build py-mochi-tmci  $BUILD_TYPE
+  try_build py-mochi-margo $BUILD_TYPE $LOGFILE
+  try_build py-mochi-bake  $BUILD_TYPE $LOGFILE
+  try_build py-mochi-ssg   $BUILD_TYPE $LOGFILE
+  try_build py-mochi-remi  $BUILD_TYPE $LOGFILE
+  try_build py-mochi-sdskv $BUILD_TYPE $LOGFILE
+  try_build py-mochi-tmci  $BUILD_TYPE $LOGFILE
 fi
 
 exit $STATUS
