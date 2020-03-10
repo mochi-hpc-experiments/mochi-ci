@@ -29,17 +29,15 @@ function try_build {
     RET=$?
   fi
   if [[ "$RET" = "0" ]]; then
-    echo "$PACKAGE ($VERSION) build => OK" >> $LOGFILE
+    echo "$PACKAGE ($VERSION) build\t =>\t OK" >> $LOGFILE
   else
-    echo "$PACKAGE ($VERSION) build => FAILURE" >> $LOGFILE
+    echo "$PACKAGE ($VERSION) build\t =>\t FAILURE" >> $LOGFILE
     STATUS=1
   fi
 }
 
 echo "Loading Spack"
 . spack/share/spack/setup-env.sh
-
-mkdir build-errors
 
 LOGFILE=build.txt
 
@@ -73,6 +71,8 @@ do
 done
 
 cat $LOGFILE
+
+echo "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
 mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
 
