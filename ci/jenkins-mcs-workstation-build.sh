@@ -66,6 +66,8 @@ if [ $ENABLE_PYTHON = "python" ]; then
   try_build py-mochi-tmci  $BUILD_TYPE $LOGFILE
 fi
 
+cat $LOGFILE
+
 exit $STATUS
 
 #if [[ $BUILD_TYPE = "release" ]]
