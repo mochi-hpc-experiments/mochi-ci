@@ -29,9 +29,9 @@ function try_build {
     RET=$?
   fi
   if [[ "$RET" = "0" ]]; then
-    echo -e "$PACKAGE ($VERSION) build\t =>\t OK" >> $LOGFILE
+    printf "%40s => OK" "$PACKAGE ($VERSION)" >> $LOGFILE
   else
-    echo -e "$PACKAGE ($VERSION) build\t =>\t FAILURE" >> $LOGFILE
+    printf "%40s => FAILURE" "$PACKAGE ($VERSION)" >> $LOGFILE
     STATUS=1
   fi
 }
@@ -39,7 +39,7 @@ function try_build {
 function prepare_python {
   spack install py-pip
   spack load -r py-pip
-  pip install tensorflow
+  pip install 'tensorflow==2.1.0'
 }
 
 echo "Loading Spack"
@@ -50,6 +50,7 @@ LOGFILE=build.txt
 for BUILD_TYPE in release develop
 do
 
+  echo "========== ${BUILD_TYPE} =========" >> $LOGFILE
   echo "Building all Mochi components (${BUILD_TYPE})"
   try_build mochi-abt-io       $BUILD_TYPE $LOGFILE
   try_build mochi-margo        $BUILD_TYPE $LOGFILE
@@ -67,7 +68,7 @@ do
   try_build py-mochi-ssg       $BUILD_TYPE $LOGFILE
   try_build py-mochi-remi      $BUILD_TYPE $LOGFILE
   try_build py-mochi-sdskv     $BUILD_TYPE $LOGFILE
-  prepare_python
+#  prepare_python
   try_build py-mochi-tmci      $BUILD_TYPE $LOGFILE
 
 done
@@ -76,6 +77,6 @@ cat $LOGFILE
 
 echo -e "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
-#mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
+mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
 
 exit $STATUS
