@@ -36,6 +36,12 @@ function try_build {
   fi
 }
 
+function prepare_python {
+  spack install py-pip
+  spack load -r py-pip
+  pip install tensorflow
+}
+
 echo "Loading Spack"
 . spack/share/spack/setup-env.sh
 
@@ -66,6 +72,7 @@ do
   try_build py-mochi-ssg       $BUILD_TYPE $LOGFILE
   try_build py-mochi-remi      $BUILD_TYPE $LOGFILE
   try_build py-mochi-sdskv     $BUILD_TYPE $LOGFILE
+  prepare_python
   try_build py-mochi-tmci      $BUILD_TYPE $LOGFILE
 
 done
