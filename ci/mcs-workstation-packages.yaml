@@ -69,11 +69,6 @@ packages:
     buildable: False
   mercury:
     variants: ~boostsys
-  openssl:
-    paths:
-      openssl@1.0.2g arch=linux-ubuntu16.04-x86_64: /usr
-      openssl@1.0.1f arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
   perl:
     paths:
       perl@5.22.1 arch=linux-ubuntu16.04-x86_64: /usr

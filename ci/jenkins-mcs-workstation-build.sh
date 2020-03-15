@@ -47,10 +47,6 @@ echo "Loading Spack"
 
 LOGFILE=build.txt
 
-BUILD_TYPE="release"
-
-echo "Building all Mochi components (${BUILD_TYPE})"
-
 for BUILD_TYPE in release develop
 do
 
@@ -66,7 +62,6 @@ do
   try_build mochi-poesie       $BUILD_TYPE $LOGFILE
   try_build mochi-mdcs         $BUILD_TYPE $LOGFILE
   try_build mochi-sdsdkv       $BUILD_TYPE $LOGFILE
-  try_build mochi-abt-io       $BUILD_TYPE $LOGFILE
   try_build py-mochi-margo     $BUILD_TYPE $LOGFILE
   try_build py-mochi-bake      $BUILD_TYPE $LOGFILE
   try_build py-mochi-ssg       $BUILD_TYPE $LOGFILE
@@ -81,6 +76,6 @@ cat $LOGFILE
 
 echo -e "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
-mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
+#mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
 
 exit $STATUS
