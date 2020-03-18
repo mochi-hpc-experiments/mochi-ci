@@ -29,9 +29,9 @@ function try_build {
     RET=$?
   fi
   if [[ "$RET" = "0" ]]; then
-    printf "%40s => OK\n" "$PACKAGE ($VERSION)" >> $LOGFILE
+    printf "%-40s => OK\n" "$PACKAGE ($VERSION)" >> $LOGFILE
   else
-    printf "%40s => FAILURE\n" "$PACKAGE ($VERSION)" >> $LOGFILE
+    printf "%-40s => FAILURE\n" "$PACKAGE ($VERSION)" >> $LOGFILE
     STATUS=1
   fi
 }
