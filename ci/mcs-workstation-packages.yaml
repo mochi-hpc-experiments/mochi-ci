@@ -83,6 +83,11 @@ packages:
     paths:
       tar@1.28: /usr
     buildable: False
+  py-tensorflow:
+    paths:
+      py-tensorflow@2.1.0: ~/.local
+    variants: ~cuda~nccl
+    buildable: False
   texinfo:
     paths:
       texinfo@6.1 arch=linux-ubuntu16.04-x86_64: /usr
