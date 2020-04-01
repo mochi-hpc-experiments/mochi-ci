@@ -63,13 +63,14 @@ do
   try_build mochi-poesie       $BUILD_TYPE $LOGFILE
   try_build mochi-mdcs         $BUILD_TYPE $LOGFILE
   try_build mochi-sdsdkv       $BUILD_TYPE $LOGFILE
+  try_build mochi-sonata       $BUILD_TYPE $LOGFILE
   try_build py-mochi-margo     $BUILD_TYPE $LOGFILE
   try_build py-mochi-bake      $BUILD_TYPE $LOGFILE
   try_build py-mochi-ssg       $BUILD_TYPE $LOGFILE
   try_build py-mochi-remi      $BUILD_TYPE $LOGFILE
   try_build py-mochi-sdskv     $BUILD_TYPE $LOGFILE
 #  prepare_python
-  try_build py-mochi-tmci      $BUILD_TYPE $LOGFILE
+#  try_build py-mochi-tmci      $BUILD_TYPE $LOGFILE
 
 done
 
