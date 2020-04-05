@@ -6,21 +6,6 @@ packages:
     paths:
       autoconf@2.69: /usr
     buildable: False
-  automake:
-    paths:
-      automake@1.15 arch=linux-ubuntu16.04-x86_64: /usr
-      automake@1.14.1 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
-  binutils:
-    paths:
-      binutils@2.26.1 arch=linux-ubuntu16.04-x86_64: /usr
-      binutils@2.24 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
-  bison:
-    paths:
-      bison@3.0.4 arch=linux-ubuntu16.04-x86_64: /usr
-      bison@3.0.2 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
   boost:
     paths:
       boost@1.69: /soft/apps/packages/boost-1.69
@@ -33,66 +18,24 @@ packages:
     paths:
       cmake@3.14.3: /soft/apps/packages/cmake-3.14.3
     buildable: False
-  coreutils:
-    paths:
-      coreutils@8.25 arch=linux-ubuntu16.04-x86_64: /usr
-      coreutils@8.21 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
-  findutils:
-    paths:
-      findutils@4.7.0 arch=linux-ubuntu16.04-x86_64: /usr
-      findutils@4.4.2 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
-  flex:
-    paths:
-      flex@2.6.0 arch=linux-ubuntu16.04-x86_64: /usr
-      flex@2.5.35 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
-  gettext:
-    paths:
-      gettext@0.19.7 arch=linux-ubuntu16.04-x86_64: /usr
-      gettext@0.18.3 arch=linux-ubuntu14.04-x86_64: /usr
   git:
     paths:
       git@2.10.1: /soft/apps/packages/git-2.10.1/bin/git
     buildable: False
   libfabric:
     variants: fabrics=tcp,rxm
-  libtool:
-    paths:
-      libtool@2.4.6 arch=linux-ubuntu16.04-x86_64: /usr
-      libtool@2.4.2 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
   m4:
     paths:
       m4@1.4.17: /usr
     buildable: False
   mercury:
     variants: ~boostsys
-  perl:
-    paths:
-      perl@5.22.1 arch=linux-ubuntu16.04-x86_64: /usr
-      perl@5.18.2 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
-  pkg-config:
-    paths:
-      pkg-config@0.29.1 arch=linux-ubuntu16.04-x86_64: /usr
-      pkg-config@0.26 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
   tar:
     paths:
       tar@1.28: /usr
     buildable: False
   py-tensorflow:
-    paths:
-      py-tensorflow@2.1.0: ~/.local
     variants: ~cuda~nccl
-    buildable: False
-  texinfo:
-    paths:
-      texinfo@6.1 arch=linux-ubuntu16.04-x86_64: /usr
-      texinfo@5.2 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
   xz:
     paths:
       xz@5.1.0: /usr
