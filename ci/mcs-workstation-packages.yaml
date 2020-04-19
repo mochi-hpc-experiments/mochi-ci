@@ -59,10 +59,11 @@ packages:
   libfabric:
     variants: fabrics=tcp,rxm
   libtool:
-    paths:
-      libtool@2.4.6 arch=linux-ubuntu16.04-x86_64: /usr
-      libtool@2.4.2 arch=linux-ubuntu14.04-x86_64: /usr
-    buildable: False
+    version: [ 2.4.2 ]
+#    paths:
+#      libtool@2.4.6 arch=linux-ubuntu16.04-x86_64: /usr
+#      libtool@2.4.2 arch=linux-ubuntu14.04-x86_64: /usr
+#    buildable: False
   m4:
     paths:
       m4@1.4.17: /usr
