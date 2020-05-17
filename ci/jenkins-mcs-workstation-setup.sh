@@ -6,7 +6,7 @@ HERE=`dirname "$0"`
 echo "Setting up Spack"
 git clone https://github.com/spack/spack.git
 . spack/share/spack/setup-env.sh
-spack bootstrap
+#spack bootstrap
 
 echo "Copying packages.yaml file"
 cp $HERE/mcs-workstation-packages.yaml $HOME/.spack/linux/packages.yaml
