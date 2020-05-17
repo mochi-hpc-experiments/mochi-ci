@@ -9,6 +9,7 @@ git clone https://github.com/spack/spack.git
 #spack bootstrap
 
 echo "Copying packages.yaml file"
+mkdir -p $HOME/.spack/linux
 cp $HERE/mcs-workstation-packages.yaml $HOME/.spack/linux/packages.yaml
 
 echo "Setting up sds-repo"
