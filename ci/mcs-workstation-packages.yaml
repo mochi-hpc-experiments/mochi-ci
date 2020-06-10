@@ -25,7 +25,7 @@ packages:
   libfabric:
     variants: fabrics=tcp,rxm
   libtool:
-    version: [ 2.4.2 ]
+    version: [ 2.4.6 ]
   m4:
     paths:
       m4@1.4.17: /usr
