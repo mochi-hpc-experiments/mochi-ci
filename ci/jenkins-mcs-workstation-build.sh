@@ -57,6 +57,7 @@ do
   try_build mochi-ch-placement $BUILD_TYPE $LOGFILE
   try_build mochi-thallium     $BUILD_TYPE $LOGFILE
   try_build mochi-ssg          $BUILD_TYPE $LOGFILE
+  try_build mochi-colza        $BUILD_TYPE $LOGFILE
   try_build mochi-bake         $BUILD_TYPE $LOGFILE
   try_build mochi-sdskv        $BUILD_TYPE $LOGFILE
   try_build mochi-remi         $BUILD_TYPE $LOGFILE
