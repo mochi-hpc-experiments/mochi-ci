@@ -24,8 +24,10 @@ packages:
     buildable: False
   libfabric:
     variants: fabrics=tcp,rxm
-#  libtool:
-#    version: [ 2.4.2 ]
+  libtool:
+    paths:
+      libtool@2.4.2: /usr
+    buildable: False
   m4:
     paths:
       m4@1.4.17: /usr
