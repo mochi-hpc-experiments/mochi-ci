@@ -2,10 +2,10 @@ packages:
   all:
     providers:
       mpi: [ mpich, openmpi ]
-  autoconf:
-    paths:
-      autoconf@2.69: /usr
-    buildable: False
+#  autoconf:
+#    paths:
+#      autoconf@2.69: /usr
+#    buildable: False
   boost:
     paths:
       boost@1.69: /soft/apps/packages/boost-1.69
@@ -24,12 +24,12 @@ packages:
     buildable: False
   libfabric:
     variants: fabrics=tcp,rxm
-  libtool:
-    version: [ 2.4.2 ]
-  m4:
-    paths:
-      m4@1.4.17: /usr
-    buildable: False
+#  libtool:
+#    version: [ 2.4.2 ]
+#  m4:
+#    paths:
+#      m4@1.4.17: /usr
+#    buildable: False
   mercury:
     variants: ~boostsys
   tar:
