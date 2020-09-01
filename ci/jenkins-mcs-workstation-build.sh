@@ -52,6 +52,7 @@ do
 
   echo "========== ${BUILD_TYPE} =========" >> $LOGFILE
   echo "Building all Mochi components (${BUILD_TYPE})"
+  try_build mochi-mona         $BUILD_TYPE $LOGFILE
   try_build mochi-abt-io       $BUILD_TYPE $LOGFILE
   try_build mochi-margo        $BUILD_TYPE $LOGFILE
   try_build mochi-ch-placement $BUILD_TYPE $LOGFILE
