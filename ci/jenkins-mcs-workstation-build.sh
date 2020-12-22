@@ -40,7 +40,7 @@ function try_build {
     STATUS=1
   fi
   spack env deactivate
-  spack env rm $SPACKENV
+  spack env rm -y $SPACKENV
 }
 
 function prepare_python {
