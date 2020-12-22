@@ -6,6 +6,7 @@ STATUS=0
 
 function try_build {
   PACKAGE=$1
+  SPACKENV=$1-env
   VERSION=$2
   LOGFILE=$3
   DEVELOP=false
@@ -21,11 +22,14 @@ function try_build {
     echo "Verion should be either 'develop' or 'release'"
   fi
   RET=0
+  spack env create $SPACKENV
   if $DEVELOP ; then
-    spack install $PACKAGE@develop
+    spack add $PACKAGE@develop
+    spack install
     RET=$?
   else
-    spack install $PACKAGE
+    spack add $PACKAGE
+    spack install
     RET=$?
   fi
   if [[ "$RET" = "0" ]]; then
@@ -34,6 +38,7 @@ function try_build {
     printf "%-40s => FAILURE\n" "$PACKAGE ($VERSION)" >> $LOGFILE
     STATUS=1
   fi
+  spack env deactivate
 }
 
 function prepare_python {

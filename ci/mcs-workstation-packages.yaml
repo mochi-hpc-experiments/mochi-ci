@@ -1,50 +1,25 @@
 packages:
   all:
     providers:
-      mpi: [ mpich, openmpi ]
-#  autoconf:
-#    paths:
-#      autoconf@2.69: /usr
-#    buildable: False
+      mpi: [mpich, openmpi]
   boost:
-    paths:
-      boost@1.69: /soft/apps/packages/boost-1.69
-    buildable: False
-  bzip2:
-    paths:
-      bzip2@1.0.6: /usr
-    buildable: False
+    buildable: false
+    externals:
+    - prefix: /soft/apps/packages/boost-1.69
+      spec: boost@1.69
   cmake:
-    paths:
-      cmake@3.14.3: /soft/apps/packages/cmake-3.14.3
-    buildable: False
+    buildable: false
+    externals:
+    - prefix: /soft/apps/packages/cmake-3.14.3
+      spec: cmake@3.14.3
   git:
-    paths:
-      git@2.10.1: /soft/apps/packages/git-2.10.1/bin/git
-    buildable: False
-  openblas:
-    version: [ 0.3.10 ]
+    buildable: false
+    externals:
+    - prefix: /soft/apps/packages/git-2.10.1/bin/git
+      spec: git@2.10.1
   libfabric:
     variants: fabrics=tcp,rxm
-#  libtool:
-#    version: [ 2.4.2 ]
-#  m4:
-#    paths:
-#      m4@1.4.17: /usr
-#    buildable: False
   mercury:
     variants: ~boostsys
-  tar:
-    paths:
-      tar@1.28: /usr
-    buildable: False
   py-tensorflow:
     variants: ~cuda~nccl
-  xz:
-    paths:
-      xz@5.1.0: /usr
-    buildable: False
-  zlib:
-    paths:
-      zlib@1.2.8: /usr
-    buildable: False
