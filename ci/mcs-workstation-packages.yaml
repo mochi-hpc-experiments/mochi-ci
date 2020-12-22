@@ -3,7 +3,7 @@ packages:
     providers:
       mpi: [mpich, openmpi]
   automake:
-    versions: [ 1.15.1 ]
+    version: [ 1.15.1 ]
   boost:
     buildable: false
     externals:
@@ -25,3 +25,6 @@ packages:
     variants: ~boostsys
   py-tensorflow:
     variants: ~cuda~nccl
+  openblas:
+    version: [ 0.3.10 ]
+
