@@ -23,6 +23,7 @@ function try_build {
   fi
   RET=0
   spack env create $SPACKENV
+  spack env activate $SPACKENV
   if $DEVELOP ; then
     spack add $PACKAGE@develop
     spack install
