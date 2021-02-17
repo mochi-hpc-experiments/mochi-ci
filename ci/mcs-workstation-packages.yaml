@@ -13,6 +13,10 @@ packages:
     variants: fabrics=tcp,rxm
   mercury:
     variants: ~boostsys
+  python:
+    version: [ 3.7.0 ]
+  py-numpy:
+    version: [ 1.18.0 ]
   py-tensorflow:
     variants: ~cuda~nccl
   openblas:
