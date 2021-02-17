@@ -2,23 +2,11 @@ packages:
   all:
     providers:
       mpi: [mpich, openmpi]
-  automake:
-    version: [ 1.15.1 ]
   boost:
     buildable: false
     externals:
     - prefix: /soft/apps/packages/boost-1.69
       spec: boost@1.69
-  cmake:
-    buildable: false
-    externals:
-    - prefix: /soft/apps/packages/cmake-3.14.3
-      spec: cmake@3.14.3
-  git:
-    buildable: false
-    externals:
-    - prefix: /soft/apps/packages/git-2.10.1/bin/git
-      spec: git@2.10.1
   libfabric:
     variants: fabrics=tcp,rxm
   mercury:
