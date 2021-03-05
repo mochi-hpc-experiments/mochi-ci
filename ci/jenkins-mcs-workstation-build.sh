@@ -22,7 +22,7 @@ function try_build {
     echo "Verion should be either 'develop' or 'release'"
   fi
   RET=0
-  spack env create $SPACKENV
+  spack env create $SPACKENV ci/mcs-workstation-env.yaml
   spack env activate $SPACKENV
   if $DEVELOP ; then
     spack add $PACKAGE@develop
