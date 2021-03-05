@@ -3,8 +3,6 @@ spack:
     build_stage:
     - ~/.spack/stage
   concretization: together
-  repos:
-  - ~/mochi-ci/sds-repo
   packages:
     all:
       providers:
