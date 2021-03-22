@@ -1,0 +1,28 @@
+spack:
+  config:
+    build_stage:
+    - ~/.spack/stage
+  concretization: together
+  packages:
+    all:
+      providers:
+        mpi: [ mpich ]
+    automake:
+      version: [ 1.15.1 ]
+    boost:
+      buildable: false
+      externals:
+      - prefix: /soft/apps/packages/boost-1.69
+        spec: boost@1.69
+    libfabric:
+      variants: fabrics=tcp,rxm
+    mercury:
+      variants: ~boostsys
+    python:
+      version: [ 3.7.0 ]
+    py-numpy:
+      version: [ 1.18.0 ]
+    py-tensorflow:
+      variants: ~cuda~nccl
+    openblas:
+      version: [ 0.3.10 ]
