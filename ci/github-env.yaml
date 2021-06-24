@@ -1,0 +1,9 @@
+spack:
+  packages:
+    all:
+      providers:
+        mpi: [ mpich ]
+    libfabric:
+      variants: fabrics=tcp,rxm
+    mercury:
+      variants: ~boostsys
