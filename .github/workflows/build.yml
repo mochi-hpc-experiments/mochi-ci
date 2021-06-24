@@ -3,7 +3,7 @@ name: build
 on: [push,pull_request,workflow_dispatch]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -17,7 +17,6 @@ jobs:
         cd /opt/spack && git checkout releases/latest
     - name: Find external packages
       run: |
-        cd code &&
         eval `/opt/spack/bin/spack env activate --sh .` &&
         /opt/spack/bin/spack external find --not-buildable cmake &&
         /opt/spack/bin/spack external find --not-buildable perl &&
