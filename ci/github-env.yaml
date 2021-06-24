@@ -11,6 +11,6 @@ spack:
       version: [ 5.1.5 ]
     py-numpy:
       buildable: false
-      external:
+      externals:
       - prefix: /usr
         spec: py-numpy@1.21.0
