@@ -44,7 +44,7 @@ function try_build {
 }
 
 echo "Loading Spack"
-. /opt/spack/bin/spack/share/spack/setup-env.sh
+. /opt/spack/spack/setup-env.sh
 
 LOGFILE=build.txt
 
