@@ -67,7 +67,7 @@ do
   try_build mochi-ssg          $BUILD_TYPE $LOGFILE
   try_build mochi-colza        $BUILD_TYPE $LOGFILE
   try_build mochi-bake         $BUILD_TYPE $LOGFILE
-  try_build mochi-sdskv        $BUILD_TYPE $LOGFILE
+#  try_build mochi-sdskv        $BUILD_TYPE $LOGFILE
   try_build mochi-remi         $BUILD_TYPE $LOGFILE
   try_build mochi-poesie       $BUILD_TYPE $LOGFILE
   try_build mochi-sonata       $BUILD_TYPE $LOGFILE
@@ -76,9 +76,10 @@ do
   try_build py-mochi-bake      $BUILD_TYPE $LOGFILE
   try_build py-mochi-ssg       $BUILD_TYPE $LOGFILE
   try_build py-mochi-remi      $BUILD_TYPE $LOGFILE
-  try_build py-mochi-sdskv     $BUILD_TYPE $LOGFILE
+  try_build mochi-yokan        $BUILD_TYPE $LOGFILE
+#  try_build py-mochi-sdskv     $BUILD_TYPE $LOGFILE
   try_build mobject            $BUILD_TYPE $LOGFILE
-  try_build mochi-sdsdkv       $BUILD_TYPE $LOGFILE
+#  try_build mochi-sdsdkv       $BUILD_TYPE $LOGFILE
 #  prepare_python
 #  try_build py-mochi-tmci      $BUILD_TYPE $LOGFILE
 

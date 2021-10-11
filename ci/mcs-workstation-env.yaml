@@ -26,3 +26,5 @@ spack:
       variants: ~cuda~nccl
     openblas:
       version: [ 0.3.10 ]
+    mochi-yokan:
+      variants: +berkeleydb+leveldb+lmdb+rocksdb+tkrzw+gdbm+unqlite+lua+python+bedrock
