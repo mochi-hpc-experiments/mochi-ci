@@ -27,4 +27,6 @@ spack:
     openblas:
       version: [ 0.3.10 ]
     mochi-yokan:
-      variants: +berkeleydb+leveldb+lmdb+rocksdb+tkrzw+gdbm+unqlite+lua+python+bedrock
+      # tkrzw is disabled because MCS workstation has an old Linux kernel that
+      # doesn't have some ioctl capabilities needed
+      variants: +berkeleydb+leveldb+lmdb+rocksdb+gdbm+unqlite+lua+python+bedrock
