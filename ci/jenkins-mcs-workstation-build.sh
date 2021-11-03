@@ -27,13 +27,14 @@ function try_build {
   spack env activate $SPACKENV
   if $DEVELOP ; then
     spack add $PACKAGE@develop %$COMPILER
-    spack install
-    RET=$?
   else
     spack add $PACKAGE %$COMPILER
-    spack install
-    RET=$?
   fi
+  if [[ $COMPILER == clang* ]]; then
+    spack add mpich~fortran
+  fi
+  spack install
+  RET=$?
   if [[ "$RET" = "0" ]]; then
     printf "%-40s => OK\n" "$PACKAGE ($VERSION - $COMPILER)" >> $LOGFILE
   else
