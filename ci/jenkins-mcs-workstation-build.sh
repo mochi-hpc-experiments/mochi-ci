@@ -56,7 +56,7 @@ echo "Loading Spack"
 
 LOGFILE=build.txt
 
-for COMPILER in "gcc@9.1.0" "clang@8.0.0"
+for COMPILER in "gcc@9.1.0" # "clang@8.0.0"
 do
 for BUILD_TYPE in release develop
 do
