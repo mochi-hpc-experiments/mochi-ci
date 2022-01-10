@@ -1,0 +1,75 @@
+spack:
+  concretization: together
+  compilers::
+  - compiler:
+      spec: gcc@11.1.0
+      paths:
+        cc: gcc
+        cxx: g++
+        f77: gfortran
+        fc: gfortran
+      flags: {}
+      operating_system: ubuntu18.04
+      target: x86_64
+      modules:
+      - gcc/11.1.0-5ikoznk
+      environment: {}
+      extra_rpaths: []
+  packages::
+    all:
+      providers:
+        mpi: [mpich]
+    mpich:
+      externals:
+      - spec: mpich@3.3a2
+        prefix: /usr
+    perl:
+      externals:
+      - spec: perl@5.26.1~cpanm+shared+threads
+        prefix: /usr
+    python:
+      externals:
+      - spec: python@3.8.10
+        modules:
+        - python/3.8.10-lgkuthp
+    tar:
+      externals:
+      - spec: tar@1.29
+        prefix: /
+    pkg-config:
+      externals:
+      - spec: pkg-config@0.29.1
+        prefix: /usr
+    flex:
+      externals:
+      - spec: flex@2.6.4+lex
+        prefix: /usr
+    bison:
+      externals:
+      - spec: bison@3.0.4
+        prefix: /usr
+    automake:
+      externals:
+      - spec: automake@1.15.1
+        prefix: /usr
+    libtool:
+      externals:
+      - spec: libtool@2.4.6
+        prefix: /usr
+    autoconf:
+      externals:
+      - spec: autoconf@2.69
+        prefix: /usr
+    m4:
+      externals:
+      - spec: m4@1.4.18
+        prefix: /usr
+    cmake:
+      externals:
+      - spec: cmake@3.20.5
+        modules:
+        - cmake/3.20.5-yjp2hz6
+    mercury:
+      variants: ~boostsys+debug
+    libfabric:
+      variants: fabrics=tcp,rxm,sockets
