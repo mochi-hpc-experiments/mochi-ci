@@ -19,6 +19,7 @@ spack:
     all:
       providers:
         mpi: [mpich]
+        uuid: [util-linux-uuid]
     mpich:
       externals:
       - spec: mpich@3.3a2
