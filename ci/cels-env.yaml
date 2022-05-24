@@ -1,5 +1,6 @@
 spack:
-  concretization: together
+  concretizer:
+    unify: true
   compilers::
   - compiler:
       spec: gcc@11.1.0
