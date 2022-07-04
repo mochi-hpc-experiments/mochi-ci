@@ -22,7 +22,7 @@ function try_build {
   echo "Building $PACKAGE ($VERSION version)" | tee full-log.txt
   RET=0
   spack env create $SPACKENV ci/cels-env.yaml | tee full-log.txt
-  spack env activate $SPACKENV | tee full-log.txt
+  spack env activate $SPACKENV
   spack repo add mochi-spack-packages | tee full-log.txt
   if [[ $VERSION = "develop" ]] ; then
     DEVELOP=true
@@ -41,7 +41,7 @@ function try_build {
     printf "%-40s => FAILURE\n" "$PACKAGE ($VERSION)" >> $LOGFILE
     STATUS=1
   fi
-  spack env deactivate | tee full-log.txt
+  spack env deactivate
   spack env rm -y $SPACKENV | tee full-log.txt
 }
 
