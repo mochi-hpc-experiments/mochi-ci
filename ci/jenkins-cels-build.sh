@@ -16,24 +16,24 @@ function try_build {
   VERSION=$2
   LOGFILE=$3
   DEVELOP=false
-  echo "#######################################################"
-  echo "#######################################################"
-  echo "#######################################################"
-  echo "Building $PACKAGE ($VERSION version)"
+  echo "#######################################################" | tee full-log.txt
+  echo "#######################################################" | tee full-log.txt
+  echo "#######################################################" | tee full-log.txt
+  echo "Building $PACKAGE ($VERSION version)" | tee full-log.txt
   RET=0
-  spack env create $SPACKENV ci/cels-env.yaml
-  spack env activate $SPACKENV
-  spack repo add mochi-spack-packages
+  spack env create $SPACKENV ci/cels-env.yaml | tee full-log.txt
+  spack env activate $SPACKENV | tee full-log.txt
+  spack repo add mochi-spack-packages | tee full-log.txt
   if [[ $VERSION = "develop" ]] ; then
     DEVELOP=true
   elif [[ $VERSION = "release" ]] ; then
     DEVELOP=false
     VERSION=$(find_latest_version $PACKAGE)
   else
-    echo "Verion should be either 'develop' or 'release'"
+    echo "Verion should be either 'develop' or 'release'" | tee full-log.txt
   fi
-  spack add $PACKAGE@$VERSION
-  spack install
+  spack add $PACKAGE@$VERSION | tee full-log.txt
+  spack install | tee full-log.txt
   RET=$?
   if [[ "$RET" = "0" ]]; then
     printf "%-40s => OK\n" "$PACKAGE ($VERSION)" >> $LOGFILE
@@ -41,8 +41,8 @@ function try_build {
     printf "%-40s => FAILURE\n" "$PACKAGE ($VERSION)" >> $LOGFILE
     STATUS=1
   fi
-  spack env deactivate
-  spack env rm -y $SPACKENV
+  spack env deactivate | tee full-log.txt
+  spack env rm -y $SPACKENV | tee full-log.txt
 }
 
 function prepare_python {
@@ -87,10 +87,12 @@ do
 
 done
 
-cat $LOGFILE
+cat $LOGFILE | tee full-log.txt
 
 echo -e "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
-mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
+tar czvf full-log.tgz full-log.txt
+
+mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" -a full-log.tgz sds-commits@lists.mcs.anl.gov < $LOGFILE
 
 exit $STATUS
