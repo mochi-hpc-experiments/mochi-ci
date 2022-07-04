@@ -93,6 +93,6 @@ echo -e "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
 tar czvf full-log.tgz full-log.txt
 
-mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" -a full-log.tgz sds-commits@lists.mcs.anl.gov < $LOGFILE
+mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" -A full-log.tgz sds-commits@lists.mcs.anl.gov < $LOGFILE
 
 exit $STATUS
