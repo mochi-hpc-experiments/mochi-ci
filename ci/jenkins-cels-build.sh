@@ -16,24 +16,24 @@ function try_build {
   VERSION=$2
   LOGFILE=$3
   DEVELOP=false
-  echo "#######################################################" | tee -a full-log.txt
-  echo "#######################################################" | tee -a full-log.txt
-  echo "#######################################################" | tee -a full-log.txt
-  echo "Building $PACKAGE ($VERSION version)" | tee -a full-log.txt
+  echo "#######################################################" |& tee -a full-log.txt
+  echo "#######################################################" |& tee -a full-log.txt
+  echo "#######################################################" |& tee -a full-log.txt
+  echo "Building $PACKAGE ($VERSION version)" |& tee -a full-log.txt
   RET=0
-  spack env create $SPACKENV ci/cels-env.yaml | tee -a full-log.txt
+  spack env create $SPACKENV ci/cels-env.yaml |& tee -a full-log.txt
   spack env activate $SPACKENV
-  spack repo add mochi-spack-packages | tee -a full-log.txt
+  spack repo add mochi-spack-packages |& tee -a full-log.txt
   if [[ $VERSION = "develop" ]] ; then
     DEVELOP=true
   elif [[ $VERSION = "release" ]] ; then
     DEVELOP=false
     VERSION=$(find_latest_version $PACKAGE)
   else
-    echo "Verion should be either 'develop' or 'release'" | tee -a full-log.txt
+    echo "Verion should be either 'develop' or 'release'" |& tee -a full-log.txt
   fi
-  spack add $PACKAGE@$VERSION | tee -a full-log.txt
-  spack install | tee -a full-log.txt
+  spack add $PACKAGE@$VERSION |& tee -a full-log.txt
+  spack install |& tee -a full-log.txt
   RET=$?
   if [[ "$RET" = "0" ]]; then
     printf "%-40s => OK\n" "$PACKAGE ($VERSION)" >> $LOGFILE
@@ -42,7 +42,7 @@ function try_build {
     STATUS=1
   fi
   spack env deactivate
-  spack env rm -y $SPACKENV | tee -a full-log.txt
+  spack env rm -y $SPACKENV |& tee -a full-log.txt
 }
 
 function prepare_python {
@@ -87,7 +87,7 @@ do
 
 done
 
-cat $LOGFILE | tee -a full-log.txt
+cat $LOGFILE |& tee -a full-log.txt
 
 echo -e "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
