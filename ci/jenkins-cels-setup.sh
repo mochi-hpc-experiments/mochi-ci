@@ -4,6 +4,8 @@ source ~/.bashrc
 set -e
 HERE=`dirname "$0"`
 
+rm -rf ~/.spack
+
 echo "Setting up Spack" |& tee -a full-log.txt
 git clone https://github.com/spack/spack.git |& tee -a full-log.txt
 . spack/share/spack/setup-env.sh
