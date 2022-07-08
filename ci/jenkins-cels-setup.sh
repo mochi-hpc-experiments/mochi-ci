@@ -1,8 +1,12 @@
 #!/bin/bash
 source ~/.bashrc
 
+set -o pipefail
 set -e
 HERE=`dirname "$0"`
+
+host=`hostname`
+echo "Running on $host" |& tee -a full-log.txt
 
 rm -rf ~/.spack
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o pipefail
+
 source ~/.bashrc > /dev/null 2>&1
 
 HERE=`dirname "$0"`
