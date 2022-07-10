@@ -91,6 +91,6 @@ cat $LOGFILEt
 
 echo -e "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
-#mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
+mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
 
 exit $STATUS
