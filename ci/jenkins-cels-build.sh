@@ -87,7 +87,7 @@ do
 
 done
 
-cat $LOGFILEt
+cat $LOGFILE
 
 echo -e "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
