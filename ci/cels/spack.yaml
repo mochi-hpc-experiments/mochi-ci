@@ -1,4 +1,5 @@
 spack:
+  specs: []
   concretizer:
     unify: true
   compilers::
