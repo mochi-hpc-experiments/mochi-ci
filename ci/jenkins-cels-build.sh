@@ -22,8 +22,23 @@ function try_build {
   echo "Building $PACKAGE ($VERSION version)"
   RET=0
   spack env create $SPACKENV ci/cels/spack.yaml
+  RET=$?
+  if [[ "$RET" != "0" ]]; then
+    STATUS=1
+    return
+  fi
   spack env activate $SPACKENV
+  RET=$?
+  if [[ "$RET" != "0" ]]; then
+    STATUS=1
+    return
+  fi
   spack repo add mochi-spack-packages
+  RET=$?
+  if [[ "$RET" != "0" ]]; then
+    STATUS=1
+    return
+  fi
   if [[ $VERSION = "develop" ]] ; then
     DEVELOP=true
   elif [[ $VERSION = "release" ]] ; then
@@ -33,6 +48,11 @@ function try_build {
     echo "Verion should be either 'develop' or 'release'"
   fi
   spack add $PACKAGE@$VERSION
+  RET=$?
+  if [[ "$RET" != "0" ]]; then
+    STATUS=1
+    return
+  fi
   spack install
   RET=$?
   if [[ "$RET" = "0" ]]; then
