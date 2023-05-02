@@ -21,7 +21,7 @@ function try_build {
   echo "#######################################################"
   echo "Building $PACKAGE ($VERSION version)"
   RET=0
-  spack env create $SPACKENV ci/cels-env.yaml
+  spack env create $SPACKENV ci/cels/spack.yaml
   spack env activate $SPACKENV
   spack repo add mochi-spack-packages
   if [[ $VERSION = "develop" ]] ; then
