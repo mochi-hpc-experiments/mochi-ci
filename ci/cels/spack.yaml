@@ -2,6 +2,7 @@ spack:
   specs: []
   concretizer:
     unify: true
+    reuse: false
   compilers::
   - compiler:
       spec: gcc@11.1.0
