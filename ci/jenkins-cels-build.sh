@@ -95,6 +95,7 @@ do
   try_build mochi-sonata       $BUILD_TYPE $LOGFILE
   try_build mochi-bedrock      $BUILD_TYPE $LOGFILE
   try_build mochi-yokan        $BUILD_TYPE $LOGFILE
+  try_build mochi-warabi       $BUILD_TYPE $LOGFILE
   try_build py-mochi-margo     $BUILD_TYPE $LOGFILE
   try_build py-mochi-bake      $BUILD_TYPE $LOGFILE
   try_build py-mochi-ssg       $BUILD_TYPE $LOGFILE
