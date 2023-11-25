@@ -102,6 +102,7 @@ do
   try_build py-mochi-remi      $BUILD_TYPE $LOGFILE
   try_build py-mochi-sdskv     $BUILD_TYPE $LOGFILE
   try_build mobject            $BUILD_TYPE $LOGFILE
+  try_build hepnos             $BUILD_TYPE $LOGFILE
 #  try_build mochi-sdsdkv       $BUILD_TYPE $LOGFILE
 #  prepare_python
 #  try_build py-mochi-tmci      $BUILD_TYPE $LOGFILE
