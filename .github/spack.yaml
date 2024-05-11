@@ -1,0 +1,21 @@
+# This file defines the spack environment used by github actions.
+spack:
+  specs:
+  - mpich # force mpich as dependency for packages that need it
+  concretizer:
+    unify: true
+    reuse: true
+  modules:
+    prefix_inspections:
+      lib: [LD_LIBRARY_PATH]
+      lib64: [LD_LIBRARY_PATH]
+  packages:
+    mercury:
+      require: "~boostsys~checksum"
+  mirrors:
+    mochi-buildcache:
+      url: oci://ghcr.io/mochi-hpc/mochi-spack-buildcache
+      signed: false
+  config:
+    install_tree:
+      padded_length: 128

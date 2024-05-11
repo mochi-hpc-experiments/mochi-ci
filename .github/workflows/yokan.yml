@@ -1,0 +1,10 @@
+name: Yokan (default)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  yokan:
+    uses: ./.github/workflows/base.yml
+    with:
+      package: mochi-yokan
