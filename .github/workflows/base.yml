@@ -23,7 +23,7 @@ jobs:
 
     - name: Create spack environment
       run: |
-        spack -e create ci-env .github/spack.yaml
+        spack env create ci-env .github/spack.yaml
 
     - name: Add mochi-spack-packages
       run: |
