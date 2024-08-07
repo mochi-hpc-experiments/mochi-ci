@@ -36,8 +36,9 @@ spack:
       - spec: python@3.8.10
         modules:
         - python/3.8.10-sfhmzp4
-    py-numpy:
-      require: "^openblas"
+    lapack:
+      require:
+      - openblas
     tar:
       externals:
       - spec: tar@1.30
