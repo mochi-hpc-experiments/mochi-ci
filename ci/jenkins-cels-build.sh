@@ -53,7 +53,7 @@ function try_build {
     STATUS=1
     return
   fi
-  spack install
+  spack -d install
   RET=$?
   if [[ "$RET" = "0" ]]; then
     printf "%-40s => OK\n" "$PACKAGE ($VERSION)" >> $LOGFILE
