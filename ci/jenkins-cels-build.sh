@@ -6,6 +6,9 @@ HERE=`dirname "$0"`
 
 STATUS=0
 
+export SPACK_DISABLE_LOCAL_CONFIG=true
+export SPACK_USER_CACHE_PATH=/tmp/spack
+
 function find_latest_version {
   echo $(spack info $1 | grep -A1 Preferred | tail -n1 | awk '{ print $1 }')
 }
