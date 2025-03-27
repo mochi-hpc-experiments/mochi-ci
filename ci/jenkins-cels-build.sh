@@ -7,7 +7,7 @@ HERE=`dirname "$0"`
 STATUS=0
 
 export SPACK_DISABLE_LOCAL_CONFIG=true
-export SPACK_USER_CACHE_PATH=/tmp/spack
+export SPACK_USER_CACHE_PATH=$HOME/spack-cache
 
 function find_latest_version {
   echo $(spack info $1 | grep -A1 Preferred | tail -n1 | awk '{ print $1 }')
@@ -122,5 +122,7 @@ cat $LOGFILE
 echo -e "\nYou can find build logs at $BUILD_URL" >> $LOGFILE
 
 mailx -r mdorier@anl.gov -s "Daily Mochi build summary (MCS workstation)" sds-commits@lists.mcs.anl.gov < $LOGFILE
+
+rm  -rf $HOME/spack-cache
 
 exit $STATUS
