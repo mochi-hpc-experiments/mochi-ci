@@ -7,10 +7,10 @@ spack:
   - compiler:
       spec: gcc@11.1.0
       paths:
-        cc: gcc
-        cxx: g++
-        f77: gfortran
-        fc: gfortran
+        cc: /nfs/gce/software/spack/opt/spack/linux-ubuntu20.04-x86_64/gcc-9.3.0/gcc-11.1.0-qsjmpcg/bin/gcc
+        cxx: /nfs/gce/software/spack/opt/spack/linux-ubuntu20.04-x86_64/gcc-9.3.0/gcc-11.1.0-qsjmpcg/bin/g++
+        f77: /nfs/gce/software/spack/opt/spack/linux-ubuntu20.04-x86_64/gcc-9.3.0/gcc-11.1.0-qsjmpcg/bin/gfortran
+        fc: /nfs/gce/software/spack/opt/spack/linux-ubuntu20.04-x86_64/gcc-9.3.0/gcc-11.1.0-qsjmpcg/bin/gfortran
       flags: {}
       operating_system: ubuntu20.04
       target: x86_64
