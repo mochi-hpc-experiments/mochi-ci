@@ -74,6 +74,8 @@ function prepare_python {
   pip install 'tensorflow==2.1.0'
 }
 
+echo "CI is running as user $USER"
+
 echo "Loading Spack"
 . spack/share/spack/setup-env.sh
 
