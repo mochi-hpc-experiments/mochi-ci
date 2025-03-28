@@ -86,7 +86,7 @@ do
 
   echo "========== ${BUILD_TYPE} =========" >> $LOGFILE
   echo "Building all Mochi components (${BUILD_TYPE})"
-  try_build mochi-mona         $BUILD_TYPE $LOGFILE
+#  try_build mochi-mona         $BUILD_TYPE $LOGFILE
   try_build mochi-abt-io       $BUILD_TYPE $LOGFILE
   try_build mochi-margo        $BUILD_TYPE $LOGFILE
   try_build py-mochi-margo     $BUILD_TYPE $LOGFILE
@@ -98,19 +98,19 @@ do
   try_build mochi-warabi       $BUILD_TYPE $LOGFILE
   try_build mochi-flock        $BUILD_TYPE $LOGFILE
   try_build mochi-quintain     $BUILD_TYPE $LOGFILE
-  try_build mochi-remi         $BUILD_TYPE $LOGFILE
-  try_build py-mochi-remi      $BUILD_TYPE $LOGFILE
-  try_build mochi-ssg          $BUILD_TYPE $LOGFILE
-  try_build py-mochi-ssg       $BUILD_TYPE $LOGFILE
-  try_build mochi-bake         $BUILD_TYPE $LOGFILE
-  try_build py-mochi-bake      $BUILD_TYPE $LOGFILE
+#  try_build mochi-remi         $BUILD_TYPE $LOGFILE
+#  try_build py-mochi-remi      $BUILD_TYPE $LOGFILE
+#  try_build mochi-ssg          $BUILD_TYPE $LOGFILE
+#  try_build py-mochi-ssg       $BUILD_TYPE $LOGFILE
+#  try_build mochi-bake         $BUILD_TYPE $LOGFILE
+#  try_build py-mochi-bake      $BUILD_TYPE $LOGFILE
 #  try_build mochi-sdskv        $BUILD_TYPE $LOGFILE
-  try_build mochi-sonata       $BUILD_TYPE $LOGFILE
-  try_build mochi-colza        $BUILD_TYPE $LOGFILE
+#  try_build mochi-sonata       $BUILD_TYPE $LOGFILE
+#  try_build mochi-colza        $BUILD_TYPE $LOGFILE
 #  try_build py-mochi-sdskv     $BUILD_TYPE $LOGFILE
   try_build mofka              $BUILD_TYPE $LOGFILE
-  try_build mobject            $BUILD_TYPE $LOGFILE
-  try_build hepnos             $BUILD_TYPE $LOGFILE
+#  try_build mobject            $BUILD_TYPE $LOGFILE
+#  try_build hepnos             $BUILD_TYPE $LOGFILE
 #  try_build mochi-sdsdkv       $BUILD_TYPE $LOGFILE
 #  prepare_python
 #  try_build py-mochi-tmci      $BUILD_TYPE $LOGFILE
