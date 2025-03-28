@@ -19,14 +19,15 @@ spack:
       environment: {}
       extra_rpaths: []
   packages::
-    all:
-      providers:
-        mpi: [mpich]
-        uuid: [util-linux-uuid]
+    mpi:
+      require: [mpich]
+    uuid:
+      require: [util-linux-uuid]
     mpich:
       externals:
-      - spec: mpich@3.3.2
-        prefix: /usr
+      - spec: mpich@3.4.2
+        modules:
+        - mpich/3.4.2-intel
     perl:
       externals:
       - spec: perl@5.30.0~cpanm+shared+threads
