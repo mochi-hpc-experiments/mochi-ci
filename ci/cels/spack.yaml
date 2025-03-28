@@ -23,11 +23,11 @@ spack:
       require: [mpich]
     uuid:
       require: [util-linux-uuid]
-    mpich:
-      externals:
-      - spec: mpich@3.4.2
-        modules:
-        - mpich/3.4.2-gnu
+#    mpich:
+#      externals:
+#      - spec: mpich@3.4.2
+#        modules:
+#        - mpich/3.4.2-gnu
     perl:
       externals:
       - spec: perl@5.30.0~cpanm+shared+threads
