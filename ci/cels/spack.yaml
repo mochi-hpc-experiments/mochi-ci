@@ -27,7 +27,7 @@ spack:
       externals:
       - spec: mpich@3.4.2
         modules:
-        - mpich/3.4.2-intel
+        - mpich/3.4.2-gnu
     perl:
       externals:
       - spec: perl@5.30.0~cpanm+shared+threads
