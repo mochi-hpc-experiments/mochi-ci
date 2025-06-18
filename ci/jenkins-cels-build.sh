@@ -48,7 +48,7 @@ function try_build {
     DEVELOP=false
     VERSION=$(find_latest_version $PACKAGE)
   else
-    echo "Verion should be either 'develop' or 'release'"
+    echo "Version should be either 'develop' or 'release'"
   fi
   spack add $PACKAGE@$VERSION
   RET=$?

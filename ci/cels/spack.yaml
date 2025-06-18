@@ -1,83 +1,72 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
 spack:
+  # add package specs to the `specs` list
   specs: []
+  view: true
   concretizer:
     unify: true
-    reuse: false
-  compilers::
-  - compiler:
-      spec: gcc@11.1.0
-      paths:
-        cc: /nfs/gce/software/spack/opt/spack/linux-ubuntu20.04-x86_64/gcc-9.3.0/gcc-11.1.0-qsjmpcg/bin/gcc
-        cxx: /nfs/gce/software/spack/opt/spack/linux-ubuntu20.04-x86_64/gcc-9.3.0/gcc-11.1.0-qsjmpcg/bin/g++
-        f77: /nfs/gce/software/spack/opt/spack/linux-ubuntu20.04-x86_64/gcc-9.3.0/gcc-11.1.0-qsjmpcg/bin/gfortran
-        fc: /nfs/gce/software/spack/opt/spack/linux-ubuntu20.04-x86_64/gcc-9.3.0/gcc-11.1.0-qsjmpcg/bin/gfortran
-      flags: {}
-      operating_system: ubuntu20.04
-      target: x86_64
-      modules:
-      - gcc/11.1.0-qsjmpcg
-      environment: {}
-      extra_rpaths: []
-  packages::
-    mpi:
-      require: [mpich]
-    uuid:
-      require: [util-linux-uuid]
-#    mpich:
-#      externals:
-#      - spec: mpich@3.4.2
-#        modules:
-#        - mpich/3.4.2-gnu
+  packages:
     perl:
       externals:
-      - spec: perl@5.30.0~cpanm+shared+threads
+      - spec: perl@5.34.0~cpanm+opcode+open+shared+threads
         prefix: /usr
-    python:
+    autoconf:
       externals:
-      - spec: python@3.8.10
-        modules:
-        - python/3.8.10-sfhmzp4
-    lapack:
-      require:
-      - openblas
-    tar:
+      - spec: autoconf@2.71
+        prefix: /usr
+    automake:
       externals:
-      - spec: tar@1.30
-        prefix: /
-    pkg-config:
+      - spec: automake@1.16.5
+        prefix: /usr
+    bison:
       externals:
-      - spec: pkg-config@0.29.1
+      - spec: bison@3.8.2
+        prefix: /usr
+    cmake:
+      externals:
+      - spec: cmake@3.22.1
+        prefix: /usr
+    coreutils:
+      externals:
+      - spec: coreutils@8.32
         prefix: /usr
     flex:
       externals:
       - spec: flex@2.6.4+lex
         prefix: /usr
-    bison:
+    gcc:
       externals:
-      - spec: bison@3.5.1
+      - spec: gcc@11.4.0 languages:='c,c++,fortran'
         prefix: /usr
-    automake:
+        extra_attributes:
+          compilers:
+            c: /usr/bin/gcc
+            cxx: /usr/bin/g++
+            fortran: /usr/bin/gfortran
+    gmake:
       externals:
-      - spec: automake@1.16.1
+      - spec: gmake@4.3.0
         prefix: /usr
+    libfabric:
+      variants: fabrics=tcp,rxm
     libtool:
       externals:
       - spec: libtool@2.4.6
-        prefix: /usr
-    autoconf:
-      externals:
-      - spec: autoconf@2.69
         prefix: /usr
     m4:
       externals:
       - spec: m4@1.4.18
         prefix: /usr
-    cmake:
-      externals:
-      - spec: cmake@3.20.5
-        modules:
-        - cmake/3.20.5-zyz2eld
     mercury:
       variants: ~boostsys+debug~checksum
-    libfabric:
-      variants: fabrics=tcp,rxm,sockets
+    pkg-config:
+      externals:
+      - spec: pkg-config@0.29.2
+        prefix: /usr
+    tar:
+      externals:
+      - spec: tar@1.34
+        prefix: /usr
