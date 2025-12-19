@@ -114,7 +114,6 @@ do
 #  try_build mochi-sdsdkv       $BUILD_TYPE $LOGFILE
 #  prepare_python
 #  try_build py-mochi-tmci      $BUILD_TYPE $LOGFILE
-
 done
 
 cat $LOGFILE
