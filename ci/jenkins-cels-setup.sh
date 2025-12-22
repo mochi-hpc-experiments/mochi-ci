@@ -20,8 +20,8 @@ echo "Setting up Spack"
 git clone -c feature.manyFiles=true --depth=2 https://github.com/spack/spack.git
 . spack/share/spack/setup-env.sh
 
-echo "Cloning Mochi spack packages"
-git clone https://github.com/mochi-hpc/mochi-spack-packages.git
-
 echo "Cloning Diaspora spack packages"
 git clone https://github.com/diaspora-project/diaspora-spack-packages.git
+
+echo "Cloning Mochi spack packages"
+git clone https://github.com/mochi-hpc/mochi-spack-packages.git
