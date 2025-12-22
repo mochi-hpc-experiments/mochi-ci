@@ -13,6 +13,9 @@ rm -rf ~/.spack
 export SPACK_DISABLE_LOCAL_CONFIG=true
 export SPACK_USER_CACHE_PATH=/tmp/spack
 
+echo "What's in $HOME:"
+ls -la $HOME
+
 echo "Setting up Spack"
 git clone -c feature.manyFiles=true --depth=2 https://github.com/spack/spack.git
 . spack/share/spack/setup-env.sh
