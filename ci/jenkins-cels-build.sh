@@ -36,7 +36,7 @@ function try_build {
     STATUS=1
     return
   fi
-  spack repo add mochi-spack-packages
+  spack repo add mochi-spack-packages/spack_repo/mochi
   RET=$?
   if [[ "$RET" != "0" ]]; then
     STATUS=1
