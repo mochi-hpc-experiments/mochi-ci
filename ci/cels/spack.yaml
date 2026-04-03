@@ -8,6 +8,11 @@ spack:
   view: true
   concretizer:
     unify: true
+  repos:
+    diaspora:
+      git: https://github.com/diaspora-project/diaspora-spack-packages.git
+    mochi:
+      git: https://github.com/mochi-hpc/mochi-spack-packages.git
   packages:
     perl:
       externals:
